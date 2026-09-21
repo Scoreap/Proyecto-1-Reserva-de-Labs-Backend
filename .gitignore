@@ -1,3 +1,12 @@
 node_modules/
 .env
 dist/
+/generated/prisma
+
+# carpetas de "skills" que Prisma CLI autogenera para asistentes de IA (no son parte del proyecto)
+.claude/skills/
+.cursor/skills/
+.windsurf/skills/
+.agents/skills/
+.devin/skills/
+skills-lock.json
