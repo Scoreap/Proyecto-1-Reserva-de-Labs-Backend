@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  // La URL de conexión ya no va acá (Prisma 7): se define en prisma7.config.ts
+}
+
+model Sala {
+  id        Int       @id @default(autoincrement())
+  nombre    String
+  edificio  String
+  capacidad Int
+  reservas  Reserva[] // una sala → muchas reservas
+}
+
+model Reserva {
+  id          Int      @id @default(autoincrement())
+  responsable String
+  motivo      String
+  inicio      DateTime
+  fin         DateTime
+  sala        Sala     @relation(fields: [salaId], references: [id], onDelete: Cascade)
+  salaId      Int      // la llave foránea
+}
