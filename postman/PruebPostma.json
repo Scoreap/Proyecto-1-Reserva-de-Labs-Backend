@@ -1,0 +1,138 @@
+{
+  "info": {
+    "_postman_id": "7bead2a7-858a-4784-81ca-23848b6c80b0",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "45142037",
+    "_collection_link": "https://go.postman.co/collection/45142037-7bead2a7-858a-4784-81ca-23848b6c80b0?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "PruebasLab",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"responsable\": \"x\",\n  \"motivo\": \"\",\n  \"inicio\": \"2026-12-01T16:00:00\",\n  \"fin\":    \"2026-12-01T14:00:00\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3010/api/salas/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3010",
+          "path": [
+            "api",
+            "salas",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"la basura rebota con 400\", function () {\n  pm.response.to.have.status(400);\n});\n\npm.test(\"explica qué campos fallaron\", function () {\n  pm.expect(pm.response.json()).to.have.property(\"detalles\");\n});"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"la basura rebota con 400\", function () {\n  pm.response.to.have.status(400);\n});\n\npm.test(\"explica qué campos fallaron\", function () {\n  pm.expect(pm.response.json()).to.have.property(\"detalles\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"nombre\": \"Lab D · IA\", \"edificio\": \"M\", \"capacidad\": -18 }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/salas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "salas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}
